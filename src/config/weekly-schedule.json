@@ -1,0 +1,317 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-10-21",
+  "schedule_overview": {
+    "weekly_videos": "5-7 videos",
+    "language_mix": "70% Arabic (Khaleeji), 30% English",
+    "persona_distribution": "40% Fatima, 40% Ahmed, 20% Collaborative",
+    "content_types": {
+      "educational": "35%",
+      "market_analysis": "35%",
+      "strategy_deep_dive": "20%",
+      "quick_tips": "10%"
+    }
+  },
+  "weekly_content_calendar": {
+    "sunday": {
+      "persona": "ahmed",
+      "content_type": "market_analysis",
+      "title_template": {
+        "english": "Weekly Market Outlook: [Date Range]",
+        "arabic": "نظرة عامة على الأسواق هذا الأسبوع: [Date Range]"
+      },
+      "description": "Ahmed provides comprehensive weekly market preview covering major currency pairs, commodities (oil focus for GCC), and key economic events",
+      "duration": "8-12 minutes",
+      "primary_language": "Arabic (Khaleeji)",
+      "topics": [
+        "Key economic events this week",
+        "Currency pair outlook (EUR/USD, GBP/USD, USD/JPY, etc.)",
+        "Oil and gold market preview",
+        "Technical levels to watch",
+        "Trading opportunities to monitor"
+      ],
+      "video_structure": [
+        "0:00-0:30 - Welcome & overview",
+        "0:30-2:00 - Previous week recap",
+        "2:00-6:00 - This week's key events & analysis",
+        "6:00-8:00 - Currency pair forecasts",
+        "8:00-10:00 - Trading strategies to consider",
+        "10:00-12:00 - Risk warnings & outro"
+      ]
+    },
+    "monday": {
+      "persona": "fatima",
+      "content_type": "educational",
+      "title_template": {
+        "english": "Market Monday: [Topic] Explained",
+        "arabic": "الإثنين التعليمي: شرح [Topic]"
+      },
+      "description": "Fatima delivers educational content for beginners and intermediate traders, breaking down fundamental concepts",
+      "duration": "10-15 minutes",
+      "primary_language": "Arabic (Khaleeji)",
+      "rotating_topics": [
+        {
+          "week": 1,
+          "topic": "Understanding Pip Values and Lot Sizes",
+          "arabic_topic": "فهم قيم النقاط وأحجام العقود"
+        },
+        {
+          "week": 2,
+          "topic": "Support and Resistance Basics",
+          "arabic_topic": "أساسيات مستويات الدعم والمقاومة"
+        },
+        {
+          "week": 3,
+          "topic": "Introduction to Candlestick Patterns",
+          "arabic_topic": "مقدمة في أنماط الشموع اليابانية"
+        },
+        {
+          "week": 4,
+          "topic": "Risk Management: Position Sizing",
+          "arabic_topic": "إدارة المخاطر: تحديد حجم المراكز"
+        }
+      ],
+      "video_structure": [
+        "0:00-1:00 - Introduction & topic overview",
+        "1:00-3:00 - Why this matters for traders",
+        "3:00-9:00 - Step-by-step explanation with examples",
+        "9:00-12:00 - Practical application demo",
+        "12:00-14:00 - Common mistakes to avoid",
+        "14:00-15:00 - Summary & risk disclaimer"
+      ]
+    },
+    "tuesday": {
+      "persona": "ahmed",
+      "content_type": "technical_analysis",
+      "title_template": {
+        "english": "Technical Tuesday: [Pair] Analysis",
+        "arabic": "الثلاثاء الفني: تحليل [Pair]"
+      },
+      "description": "Ahmed provides in-depth technical analysis of major currency pairs using charts, indicators, and patterns",
+      "duration": "6-10 minutes",
+      "primary_language": "Arabic (Khaleeji)",
+      "focus_pairs_rotation": [
+        "EUR/USD",
+        "GBP/USD",
+        "USD/JPY",
+        "Gold (XAU/USD)",
+        "Oil (WTI/Brent)",
+        "AUD/USD",
+        "USD/CAD"
+      ],
+      "video_structure": [
+        "0:00-0:30 - Pair overview & recent performance",
+        "0:30-3:00 - Chart analysis (timeframes: Daily, 4H, 1H)",
+        "3:00-5:00 - Key technical indicators",
+        "5:00-7:00 - Potential trade setups",
+        "7:00-9:00 - Entry/exit levels & risk management",
+        "9:00-10:00 - Disclaimer & outro"
+      ]
+    },
+    "wednesday": {
+      "persona": "fatima",
+      "content_type": "tips_and_insights",
+      "title_template": {
+        "english": "Mid-Week Trading Tips: [Topic]",
+        "arabic": "نصائح منتصف الأسبوع: [Topic]"
+      },
+      "description": "Fatima shares practical trading tips, risk management advice, and trading psychology insights",
+      "duration": "5-8 minutes",
+      "primary_language": "Arabic (Khaleeji)",
+      "weekly_themes": [
+        {
+          "week": 1,
+          "topic": "5 Risk Management Rules Every Trader Needs",
+          "arabic_topic": "5 قواعد لإدارة المخاطر يحتاجها كل متداول"
+        },
+        {
+          "week": 2,
+          "topic": "How to Handle Trading Losses Emotionally",
+          "arabic_topic": "كيف تتعامل مع خسائر التداول عاطفياً"
+        },
+        {
+          "week": 3,
+          "topic": "Creating Your Personal Trading Plan",
+          "arabic_topic": "إنشاء خطة التداول الخاصة بك"
+        },
+        {
+          "week": 4,
+          "topic": "Common Trading Mistakes and How to Avoid Them",
+          "arabic_topic": "أخطاء التداول الشائعة وكيفية تجنبها"
+        }
+      ],
+      "video_structure": [
+        "0:00-0:30 - Topic introduction",
+        "0:30-5:00 - Main tips/insights (3-5 key points)",
+        "5:00-7:00 - Real-world examples",
+        "7:00-8:00 - Actionable takeaways & disclaimer"
+      ]
+    },
+    "thursday": {
+      "persona": "ahmed",
+      "content_type": "strategy_session",
+      "title_template": {
+        "english": "Strategy Thursday: [Strategy Name]",
+        "arabic": "الخميس الاستراتيجي: [Strategy Name]"
+      },
+      "description": "Ahmed teaches specific trading strategies with detailed explanations and backtested examples",
+      "duration": "12-18 minutes",
+      "primary_language": "Arabic (Khaleeji)",
+      "strategy_rotation": [
+        {
+          "strategy": "Trend Following with Moving Averages",
+          "arabic": "تتبع الاتجاه باستخدام المتوسطات المتحركة"
+        },
+        {
+          "strategy": "Breakout Trading Strategy",
+          "arabic": "استراتيجية التداول عند الاختراق"
+        },
+        {
+          "strategy": "Range Trading in Sideways Markets",
+          "arabic": "التداول في الأسواق الجانبية"
+        },
+        {
+          "strategy": "News Trading: Economic Calendar Approach",
+          "arabic": "التداول على الأخبار: منهج التقويم الاقتصادي"
+        }
+      ],
+      "video_structure": [
+        "0:00-1:00 - Strategy introduction & overview",
+        "1:00-3:00 - Theory behind the strategy",
+        "3:00-8:00 - Step-by-step implementation",
+        "8:00-12:00 - Live chart examples",
+        "12:00-15:00 - Risk management for this strategy",
+        "15:00-17:00 - Backtesting results & expectations",
+        "17:00-18:00 - Disclaimer & final thoughts"
+      ]
+    },
+    "friday": {
+      "persona": "fatima",
+      "content_type": "risk_management",
+      "title_template": {
+        "english": "Friday Focus: Risk Management & Week Recap",
+        "arabic": "تركيز الجمعة: إدارة المخاطر ومراجعة الأسبوع"
+      },
+      "description": "Fatima emphasizes risk management principles and provides weekly recap with lessons learned",
+      "duration": "8-12 minutes",
+      "primary_language": "Arabic (Khaleeji)",
+      "weekly_focus_areas": [
+        "Position sizing and capital allocation",
+        "Stop-loss placement strategies",
+        "Risk-reward ratio optimization",
+        "Portfolio diversification in forex",
+        "Protecting profits and trailing stops"
+      ],
+      "video_structure": [
+        "0:00-1:00 - Welcome & week overview",
+        "1:00-4:00 - This week's market lessons",
+        "4:00-8:00 - Risk management deep dive",
+        "8:00-10:00 - Trading journal review tips",
+        "10:00-12:00 - Weekend preparation & disclaimer"
+      ]
+    },
+    "saturday": {
+      "persona": "collaborative",
+      "content_type": "market_debate",
+      "title_template": {
+        "english": "Weekend Market Debate: Fatima vs Ahmed",
+        "arabic": "مناظرة السوق في عطلة نهاية الأسبوع: فاطمة ضد أحمد"
+      },
+      "description": "Fatima and Ahmed debate market outlook, trading approaches, or controversial trading topics",
+      "duration": "15-20 minutes",
+      "primary_language": "Arabic (Khaleeji) with English segments",
+      "format": "Conversational debate format",
+      "debate_topics": [
+        "Technical Analysis vs Fundamental Analysis: Which is Better?",
+        "Day Trading vs Swing Trading for Beginners",
+        "Is Forex Trading Worth It? Pros and Cons",
+        "Best Currency Pairs for GCC Traders",
+        "Should You Use Leverage? The Great Debate"
+      ],
+      "video_structure": [
+        "0:00-1:00 - Introduction of topic & debate format",
+        "1:00-3:00 - Fatima's opening position",
+        "3:00-5:00 - Ahmed's opening position",
+        "5:00-12:00 - Back-and-forth debate with examples",
+        "12:00-15:00 - Finding common ground",
+        "15:00-18:00 - Audience takeaways",
+        "18:00-20:00 - Conclusion & disclaimer"
+      ]
+    },
+    "bonus_content": {
+      "description": "Optional 7th video per week - Quick tips, Q&A, or trending topic response",
+      "frequency": "1-2 times per month",
+      "content_types": [
+        {
+          "type": "Quick Tip Tuesday",
+          "duration": "2-4 minutes",
+          "persona": "Either Fatima or Ahmed",
+          "description": "Bite-sized trading tips or market insights"
+        },
+        {
+          "type": "Viewer Q&A",
+          "duration": "10-15 minutes",
+          "persona": "Collaborative or alternating",
+          "description": "Answer top community questions from comments"
+        },
+        {
+          "type": "Breaking News Analysis",
+          "duration": "5-8 minutes",
+          "persona": "Ahmed (for urgent market events)",
+          "description": "Timely response to major economic/geopolitical events"
+        }
+      ]
+    }
+  },
+  "production_workflow": {
+    "content_planning": {
+      "timeline": "Plan 2 weeks ahead",
+      "approval_process": "Review topics and scripts before production",
+      "research_phase": "1-2 days for market analysis and fact-checking"
+    },
+    "video_production": {
+      "script_writing": "1 day per video",
+      "synthesia_generation": "2-4 hours per video",
+      "editing_and_branding": "2-3 hours per video",
+      "review_and_qa": "1 hour per video",
+      "total_per_video": "1-2 days from concept to publish"
+    },
+    "publishing_schedule": {
+      "optimal_times_gcc": {
+        "sunday_thursday": "7:00 PM - 9:00 PM Gulf Time",
+        "friday_saturday": "6:00 PM - 8:00 PM Gulf Time"
+      },
+      "youtube_seo": {
+        "upload": "2 hours before scheduled publish time",
+        "thumbnail_ab_testing": "Test 2 thumbnail variations",
+        "tags_and_description": "Include Arabic and English keywords"
+      }
+    }
+  },
+  "performance_metrics": {
+    "kpis_to_track": [
+      "View count per video",
+      "Average watch time",
+      "Audience retention rate",
+      "Subscriber growth",
+      "Engagement rate (likes, comments, shares)",
+      "Click-through rate to seekapa.com",
+      "Language preference (Arabic vs English views)"
+    ],
+    "optimization_triggers": [
+      "If retention drops below 40%, shorten videos",
+      "If engagement is low, increase call-to-action clarity",
+      "If Arabic content outperforms, increase to 80% Arabic",
+      "Monthly review of persona performance (Fatima vs Ahmed popularity)"
+    ]
+  },
+  "contingency_plans": {
+    "market_volatility": "Pause scheduled content for breaking analysis",
+    "persona_performance": "Adjust distribution if one persona significantly outperforms",
+    "seasonal_adjustments": {
+      "ramadan": "Reduce frequency to 3-4 videos/week, publish post-Iftar",
+      "summer_months": "Focus on evergreen educational content",
+      "q4_gcc_trading_season": "Increase to 7-8 videos/week with timely analysis"
+    }
+  }
+}

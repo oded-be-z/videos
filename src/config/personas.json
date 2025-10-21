@@ -1,0 +1,230 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-10-21",
+  "personas": [
+    {
+      "id": "fatima-al-rashid",
+      "name": {
+        "english": "Fatima Al-Rashid",
+        "arabic": "فاطمة الراشد"
+      },
+      "role": {
+        "english": "Senior Market Analyst & Trading Educator",
+        "arabic": "محللة أسواق مالية كبيرة ومعلمة تداول"
+      },
+      "demographics": {
+        "age_range": "40-48",
+        "location": "Dubai, UAE",
+        "nationality": "Emirati",
+        "gender": "Female",
+        "market_experience_years": 15
+      },
+      "background": {
+        "english": "With over 15 years of experience in forex trading and market analysis, Fatima has become a trusted voice in the GCC financial community. Starting her career at a leading UAE investment firm, she specialized in currency markets and developed a reputation for breaking down complex trading concepts into accessible lessons for aspiring traders. Her educational approach combines technical expertise with cultural understanding of GCC markets.",
+        "arabic": "مع أكثر من 15 عاماً من الخبرة في تداول الفوركس وتحليل الأسواق، أصبحت فاطمة صوتاً موثوقاً في المجتمع المالي الخليجي. بدأت مسيرتها المهنية في شركة استثمارية رائدة في الإمارات، وتخصصت في أسواق العملات وطورت سمعة في تبسيط مفاهيم التداول المعقدة إلى دروس سهلة الفهم للمتداولين الطموحين. يجمع نهجها التعليمي بين الخبرة التقنية والفهم الثقافي لأسواق دول مجلس التعاون الخليجي."
+      },
+      "personality_traits": [
+        "Professional and authoritative",
+        "Warm and approachable",
+        "Patient educator",
+        "Detail-oriented analyst",
+        "Culturally sensitive to GCC audience",
+        "Risk-aware and compliance-focused"
+      ],
+      "expertise_areas": [
+        "Forex fundamentals for beginners",
+        "Risk management strategies",
+        "Market sentiment analysis",
+        "Educational content creation",
+        "GCC economic trends",
+        "Currency pair analysis",
+        "Trading psychology"
+      ],
+      "content_focus": {
+        "primary_topics": [
+          "Beginner trading tutorials",
+          "Risk management education",
+          "Market analysis simplified",
+          "Trading fundamentals",
+          "Economic news interpretation"
+        ],
+        "target_audience": "Aspiring traders, beginners, women in finance",
+        "content_style": "Educational, step-by-step, empowering"
+      },
+      "voice_characteristics": {
+        "tone": "Warm, professional, encouraging",
+        "pace": "Moderate to slow (educational clarity)",
+        "accent": "Gulf Arabic (Khaleeji dialect) / Professional English",
+        "formality": "Professional but accessible",
+        "emotional_range": "Calm, confident, supportive"
+      },
+      "synthesia_config": {
+        "avatar_id": "PLACEHOLDER_FATIMA_AVATAR",
+        "avatar_description": "Professional Arab woman, 40s, modest business attire, warm expression",
+        "voice_id": "PLACEHOLDER_ARABIC_FEMALE_MATURE",
+        "voice_name": "Arabic (Gulf) - Female - Professional",
+        "background_style": "Clean office or trading desk with Seekapa branding"
+      },
+      "elevenlabs_voice": {
+        "voice_id": "PLACEHOLDER_ELEVENLABS_ARABIC_FEMALE",
+        "voice_name": "Mature Arabic Female - Educational",
+        "settings": {
+          "stability": 0.75,
+          "clarity": 0.85,
+          "style_exaggeration": 0.3
+        }
+      },
+      "weekly_schedule": {
+        "monday": "Market Week Preview",
+        "wednesday": "Mid-Week Trading Tips",
+        "friday": "Risk Management Focus"
+      },
+      "signature_phrases": {
+        "english": [
+          "Let's break this down together",
+          "Trading is a journey, not a race",
+          "Smart traders manage risk first",
+          "Remember, education protects your capital"
+        ],
+        "arabic": [
+          "دعونا نبسط هذا الموضوع معاً",
+          "التداول رحلة وليس سباق",
+          "المتداول الذكي يدير المخاطر أولاً",
+          "تذكروا، التعليم يحمي رأس مالكم"
+        ]
+      },
+      "compliance_role": "Emphasizes educational disclaimers, risk warnings, and responsible trading"
+    },
+    {
+      "id": "ahmed-al-mansouri",
+      "name": {
+        "english": "Ahmed Al-Mansouri",
+        "arabic": "أحمد المنصوري"
+      },
+      "role": {
+        "english": "Chief Trading Strategist & Market Commentator",
+        "arabic": "كبير استراتيجيي التداول ومعلق الأسواق"
+      },
+      "demographics": {
+        "age_range": "42-50",
+        "location": "Riyadh, Saudi Arabia",
+        "nationality": "Saudi Arabian",
+        "gender": "Male",
+        "market_experience_years": 20
+      },
+      "background": {
+        "english": "Ahmed brings two decades of financial markets expertise, including 8 years as an investment banker at a major Saudi financial institution. His transition to forex trading and market commentary has made him a respected authority on technical analysis and market strategy. Known for his data-driven approach and ability to identify market trends before they fully develop, Ahmed provides strategic insights that help traders navigate volatile markets with confidence.",
+        "arabic": "يجلب أحمد عقدين من الخبرة في الأسواق المالية، بما في ذلك 8 سنوات كمصرفي استثماري في مؤسسة مالية سعودية كبرى. جعله انتقاله إلى تداول الفوركس والتعليق على الأسواق سلطة محترمة في التحليل الفني واستراتيجية السوق. معروف بنهجه القائم على البيانات وقدرته على تحديد اتجاهات السوق قبل أن تتطور بالكامل، يقدم أحمد رؤى استراتيجية تساعد المتداولين على التنقل في الأسواق المتقلبة بثقة."
+      },
+      "personality_traits": [
+        "Authoritative and confident",
+        "Analytical and data-driven",
+        "Strategic thinker",
+        "Direct communicator",
+        "Results-oriented",
+        "Technically precise"
+      ],
+      "expertise_areas": [
+        "Technical analysis mastery",
+        "Chart pattern recognition",
+        "Market trend forecasting",
+        "Trading strategy development",
+        "Economic indicators analysis",
+        "Oil and commodity markets (GCC focus)",
+        "Geopolitical impact on forex",
+        "Advanced trading techniques"
+      ],
+      "content_focus": {
+        "primary_topics": [
+          "Daily/weekly market analysis",
+          "Technical chart breakdowns",
+          "Trading strategies",
+          "Economic event previews",
+          "Market trend reports",
+          "Advanced trading concepts"
+        ],
+        "target_audience": "Intermediate to advanced traders, strategy-focused investors",
+        "content_style": "Analytical, strategic, data-backed, actionable"
+      },
+      "voice_characteristics": {
+        "tone": "Confident, authoritative, analytical",
+        "pace": "Moderate to fast (professional delivery)",
+        "accent": "Gulf Arabic (Saudi dialect) / Professional English",
+        "formality": "Professional and corporate",
+        "emotional_range": "Confident, focused, measured"
+      },
+      "synthesia_config": {
+        "avatar_id": "PLACEHOLDER_AHMED_AVATAR",
+        "avatar_description": "Professional Arab man, 40s, business suit, confident posture",
+        "voice_id": "PLACEHOLDER_ARABIC_MALE_MATURE",
+        "voice_name": "Arabic (Gulf) - Male - Authoritative",
+        "background_style": "Modern trading floor or financial news studio with Seekapa branding"
+      },
+      "elevenlabs_voice": {
+        "voice_id": "PLACEHOLDER_ELEVENLABS_ARABIC_MALE",
+        "voice_name": "Mature Arabic Male - Authoritative",
+        "settings": {
+          "stability": 0.8,
+          "clarity": 0.9,
+          "style_exaggeration": 0.4
+        }
+      },
+      "weekly_schedule": {
+        "sunday": "Weekly Market Outlook",
+        "tuesday": "Technical Analysis Deep Dive",
+        "thursday": "Strategy Session"
+      },
+      "signature_phrases": {
+        "english": [
+          "The charts are telling us...",
+          "Let's look at the data",
+          "Strategy before execution",
+          "Markets reward the prepared",
+          "Technical levels don't lie"
+        ],
+        "arabic": [
+          "الرسوم البيانية تخبرنا...",
+          "دعونا ننظر إلى البيانات",
+          "الاستراتيجية قبل التنفيذ",
+          "الأسواق تكافئ المستعدين",
+          "المستويات الفنية لا تكذب"
+        ]
+      },
+      "compliance_role": "Provides technical disclaimers, emphasizes strategy is not financial advice, highlights market risks"
+    }
+  ],
+  "persona_usage_strategy": {
+    "content_distribution": {
+      "fatima": "40% - Educational, beginner-friendly, risk management",
+      "ahmed": "40% - Technical analysis, market commentary, strategies",
+      "collaborative": "20% - Joint sessions, debates, Q&A formats"
+    },
+    "language_distribution": {
+      "arabic_khaleeji": "70%",
+      "english": "30%"
+    },
+    "weekly_cadence": "5-7 videos per week (alternating personas + 1-2 collaborative)",
+    "video_length_targets": {
+      "educational": "8-12 minutes",
+      "market_analysis": "5-8 minutes",
+      "quick_tips": "2-4 minutes",
+      "deep_dive": "12-20 minutes"
+    }
+  },
+  "brand_alignment": {
+    "seekapa_values": [
+      "Education-first approach",
+      "Transparency and trust",
+      "GCC market expertise",
+      "Risk awareness",
+      "Professional excellence"
+    ],
+    "regulatory_compliance": [
+      "All videos include risk disclaimers",
+      "No promises of guaranteed returns",
+      "Educational content only (not financial advice)",
+      "Withdrawal formula explanations",
+      "Licensed broker emphasis"
+    ]
+  }
+}

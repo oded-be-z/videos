@@ -1,0 +1,259 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-10-21",
+  "brand_identity": {
+    "name": "Seekapa",
+    "tagline": "Your Gateway to Trading Excellence",
+    "website": "https://seekapa.com",
+    "markets": ["GCC", "UAE", "Saudi Arabia", "Kuwait", "Qatar", "Bahrain", "Oman"],
+    "primary_language": "Arabic (Khaleeji/Gulf dialect)",
+    "secondary_language": "English"
+  },
+  "visual_identity": {
+    "logo_files": {
+      "light_version": "/home/odedbe/brand books/Seekapa/logo-light.svg",
+      "dark_version": "/home/odedbe/brand books/Seekapa/logo-dark.svg",
+      "usage_note": "Light logo on dark backgrounds, dark logo on light backgrounds"
+    },
+    "color_palette": {
+      "primary_colors": {
+        "seekapa_green": {
+          "hex": "#1D880D",
+          "rgb": "29, 136, 13",
+          "usage": "Primary brand color, CTAs, positive indicators"
+        },
+        "seekapa_green_light": {
+          "hex": "#B2FBA5",
+          "rgb": "178, 251, 165",
+          "usage": "Backgrounds, highlights, soft accents"
+        },
+        "seekapa_purple": {
+          "hex": "#490250",
+          "rgb": "73, 2, 80",
+          "usage": "Secondary brand color, accents, premium features"
+        },
+        "seekapa_purple_light": {
+          "hex": "#FAE3FF",
+          "rgb": "250, 227, 255",
+          "usage": "Backgrounds, soft highlights"
+        }
+      },
+      "accent_colors": {
+        "black": {
+          "hex": "#000000",
+          "usage": "Text on light backgrounds, buttons, UI elements"
+        },
+        "gray_blue": {
+          "hex": "#D5D9E5",
+          "rgb": "213, 217, 229",
+          "usage": "Neutral backgrounds, dividers"
+        },
+        "coral_red": {
+          "hex": "#EF513C",
+          "rgb": "239, 81, 60",
+          "usage": "Alerts, negative indicators, warnings"
+        },
+        "soft_yellow": {
+          "hex": "#FDDF8A",
+          "rgb": "253, 223, 138",
+          "usage": "Highlights, attention markers"
+        }
+      },
+      "color_usage_rules": {
+        "backgrounds": "Always use light shade of primary colors (#B2FBA5, #FAE3FF)",
+        "text_on_light_bg": "Black (#000000)",
+        "buttons_light_bg": "Black (#000000)",
+        "buttons_dark_bg": "Solid white or outlined white",
+        "charts_buy_signal": "#1D880D",
+        "charts_sell_signal": "#EF513C"
+      }
+    },
+    "typography": {
+      "primary_font": "Gilroy",
+      "font_path": "/home/odedbe/brand books/Seekapa/gilroy/",
+      "font_weights": {
+        "light": "Gilroy Light",
+        "regular": "Gilroy Regular",
+        "medium": "Gilroy Medium",
+        "semibold": "Gilroy Semibold",
+        "bold": "Gilroy Bold"
+      },
+      "font_hierarchy": {
+        "h1": "Gilroy Medium 120pt",
+        "h2": "Gilroy Medium 86pt",
+        "h3": "Gilroy Medium 56pt",
+        "h4": "Gilroy Medium 32pt",
+        "large_paragraph": "Gilroy Medium 20pt",
+        "large_paragraph_bold": "Gilroy Bold 20pt",
+        "regular_paragraph": "Gilroy Medium 16pt",
+        "small_paragraph": "Gilroy Medium 13pt"
+      },
+      "video_text_guidelines": {
+        "main_titles": "Gilroy Bold or Semibold, 56-86pt",
+        "subtitles": "Gilroy Medium, 32-56pt",
+        "body_text": "Gilroy Medium, 20-32pt for readability",
+        "captions": "Gilroy Regular or Medium, 16-20pt"
+      }
+    }
+  },
+  "video_branding_requirements": {
+    "intro_sequence": {
+      "duration": "3-5 seconds",
+      "elements": [
+        "Seekapa logo animation",
+        "Brand colors (#1D880D or #490250 background)",
+        "Optional: Persona name introduction"
+      ]
+    },
+    "outro_sequence": {
+      "duration": "5-8 seconds",
+      "elements": [
+        "Call-to-action: 'Visit seekapa.com'",
+        "Social media handles",
+        "Risk disclaimer text",
+        "Seekapa logo"
+      ]
+    },
+    "lower_thirds": {
+      "persona_name": "Gilroy Bold, white or black depending on background",
+      "persona_title": "Gilroy Medium, smaller size",
+      "brand_watermark": "Seekapa logo in corner (10% opacity)"
+    },
+    "background_requirements": {
+      "studio_style": "Clean, professional, modern trading environment",
+      "color_scheme": "Align with Seekapa palette (greens, purples, neutrals)",
+      "branding_visibility": "Subtle Seekapa logo or brand elements in background"
+    }
+  },
+  "regulatory_compliance": {
+    "mandatory_disclaimers": {
+      "risk_warning": {
+        "english": "Trading forex and CFDs involves significant risk of loss. Only trade with capital you can afford to lose. Past performance is not indicative of future results. This content is for educational purposes only and does not constitute financial advice.",
+        "arabic": "ينطوي تداول الفوركس والعقود مقابل الفروقات على مخاطر كبيرة للخسارة. تداول فقط برأس المال الذي يمكنك تحمل خسارته. الأداء السابق لا يدل على النتائج المستقبلية. هذا المحتوى للأغراض التعليمية فقط ولا يشكل نصيحة مالية."
+      },
+      "educational_disclaimer": {
+        "english": "This video is for educational and informational purposes only. It is not personalized financial advice. Please consult with a licensed financial advisor before making any trading decisions.",
+        "arabic": "هذا الفيديو للأغراض التعليمية والمعلوماتية فقط. ليست نصيحة مالية شخصية. يرجى استشارة مستشار مالي مرخص قبل اتخاذ أي قرارات تداول."
+      },
+      "withdrawal_formula_explanation": {
+        "english": "Seekapa is a fully regulated broker. Withdrawals are processed according to regulatory requirements and our transparent withdrawal policy. Delays may occur due to verification procedures designed to protect your account security.",
+        "arabic": "سيكابا وسيط منظم بالكامل. تتم معالجة السحوبات وفقاً للمتطلبات التنظيمية وسياسة السحب الشفافة لدينا. قد تحدث تأخيرات بسبب إجراءات التحقق المصممة لحماية أمان حسابك."
+      }
+    },
+    "disclaimer_placement": {
+      "video_intro": "Brief 2-second text overlay at start",
+      "video_description": "Full disclaimer in first 3 lines",
+      "video_outro": "5-second full-screen disclaimer",
+      "pinned_comment": "Comprehensive disclaimer pinned to top"
+    },
+    "prohibited_content": [
+      "Guaranteed profit claims",
+      "Get rich quick schemes",
+      "Unrealistic return promises",
+      "Pressure to deposit immediately",
+      "Misleading success rates",
+      "Unverified testimonials",
+      "Manipulation of trading results"
+    ],
+    "required_content": [
+      "Risk warnings on every video",
+      "Educational framing",
+      "Transparent withdrawal policy references",
+      "Regulatory license mentions",
+      "Balanced view of trading (wins and losses)",
+      "Capital preservation emphasis"
+    ]
+  },
+  "content_guidelines": {
+    "tone_of_voice": {
+      "primary": "Professional, educational, trustworthy",
+      "secondary": "Approachable, culturally aware, supportive",
+      "avoid": "Hype, urgency, pressure, unrealistic optimism"
+    },
+    "messaging_principles": [
+      "Education over promotion",
+      "Transparency builds trust",
+      "Risk awareness is paramount",
+      "Long-term success over quick wins",
+      "Community and support",
+      "GCC cultural sensitivity"
+    ],
+    "call_to_action_approved": [
+      "Learn more at seekapa.com",
+      "Explore educational resources",
+      "Join our trading community",
+      "Practice with a demo account",
+      "Subscribe for weekly market insights"
+    ],
+    "call_to_action_prohibited": [
+      "Deposit now for exclusive bonus",
+      "Limited time profit opportunity",
+      "Join before this offer expires",
+      "Don't miss out on guaranteed returns"
+    ]
+  },
+  "aeo_strategy": {
+    "objective": "Combat 'scam' perception by demonstrating transparency and education-first approach",
+    "key_messages": [
+      "Seekapa is fully regulated and licensed",
+      "Transparent withdrawal policies clearly explained",
+      "Education protects traders from losses",
+      "Risk management is core to success",
+      "Community support and ongoing learning"
+    ],
+    "content_themes": [
+      "How withdrawal formulas work (transparency)",
+      "Understanding forex regulation",
+      "Realistic expectations in trading",
+      "Risk management strategies",
+      "Broker selection criteria",
+      "Success stories with balanced context"
+    ],
+    "trust_building_tactics": [
+      "Show both winning and losing trades",
+      "Explain verification and withdrawal processes",
+      "Feature real trader testimonials (verified)",
+      "Demonstrate platform transparency",
+      "Address common concerns directly"
+    ]
+  },
+  "quality_standards": {
+    "video_production": {
+      "resolution": "1080p minimum (4K preferred)",
+      "aspect_ratio": "16:9 (YouTube standard)",
+      "frame_rate": "24fps or 30fps",
+      "audio_quality": "Clear, professional, minimal background noise",
+      "subtitle_requirement": "Both Arabic and English subtitles"
+    },
+    "content_accuracy": {
+      "fact_checking": "All market data and statistics verified",
+      "source_citation": "Reference credible financial sources",
+      "update_frequency": "Review and update evergreen content quarterly"
+    }
+  },
+  "platform_specific": {
+    "youtube": {
+      "channel_name": "Seekapa Trading Academy",
+      "channel_description": "Educational forex and CFD trading content for the GCC market. Learn from expert analysts and develop your trading skills with Seekapa.",
+      "video_tags": [
+        "forex trading",
+        "تداول الفوركس",
+        "seekapa",
+        "GCC trading",
+        "تداول الخليج",
+        "تعليم التداول",
+        "forex education",
+        "technical analysis",
+        "التحليل الفني",
+        "trading strategies"
+      ],
+      "thumbnail_guidelines": {
+        "dimensions": "1280x720 pixels",
+        "text_overlay": "Gilroy Bold, high contrast",
+        "branding": "Seekapa logo visible",
+        "persona_image": "Professional headshot or action shot",
+        "color_scheme": "Seekapa brand colors"
+      }
+    }
+  }
+}
