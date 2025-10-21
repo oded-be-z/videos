@@ -1,0 +1,60 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Output files
+output/
+videos/
+branded/
+
+# State files
+pipeline_state.json
+*.state.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Video files
+*.mp4
+*.avi
+*.mov
+*.webm
+
+# Audio files
+*.mp3
+*.wav
+
+# Image files (except logo)
+*.jpg
+*.jpeg
+*.png
+!logo.png
