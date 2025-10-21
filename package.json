@@ -1,0 +1,31 @@
+{
+  "name": "videos-synthesia-agent",
+  "version": "1.0.0",
+  "description": "AI-powered video production system using Synthesia API for creating Arabic avatar videos with Seekapa branding.",
+  "main": "src/agents/video-producer.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/test-synthesia.js",
+    "start": "node src/agents/video-producer.js"
+  },
+  "keywords": [
+    "synthesia",
+    "video",
+    "ai",
+    "avatar",
+    "arabic",
+    "seekapa",
+    "branding",
+    "ffmpeg"
+  ],
+  "author": "Seekapa Team",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "fluent-ffmpeg": "^2.1.2"
+  }
+}

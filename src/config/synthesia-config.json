@@ -1,0 +1,173 @@
+{
+  "avatars": {
+    "professional": {
+      "id": "anna_costume1_cameraA",
+      "name": "Anna - Professional",
+      "description": "Professional female avatar in business attire",
+      "recommended_for": ["corporate", "educational", "financial"]
+    },
+    "friendly": {
+      "id": "anna_costume2_cameraA",
+      "name": "Anna - Friendly",
+      "description": "Approachable female avatar in casual business attire",
+      "recommended_for": ["marketing", "customer_service", "onboarding"]
+    },
+    "expert": {
+      "id": "william_costume1_cameraA",
+      "name": "William - Expert",
+      "description": "Professional male avatar for authoritative content",
+      "recommended_for": ["technical", "trading", "analysis"]
+    },
+    "consultant": {
+      "id": "william_costume2_cameraA",
+      "name": "William - Consultant",
+      "description": "Business consultant male avatar",
+      "recommended_for": ["consulting", "advisory", "strategy"]
+    }
+  },
+  "voices": {
+    "ar-SA": {
+      "female": {
+        "id": "ar-SA",
+        "name": "Saudi Arabic Female - Natural",
+        "dialect": "Saudi Arabia",
+        "description": "Natural female voice with Saudi dialect",
+        "recommended_for": ["general", "marketing", "education"]
+      },
+      "male": {
+        "id": "ar-SA",
+        "name": "Saudi Arabic Male - Natural",
+        "dialect": "Saudi Arabia",
+        "description": "Natural male voice with Saudi dialect",
+        "recommended_for": ["professional", "trading", "financial"]
+      }
+    },
+    "ar-AE": {
+      "female": {
+        "id": "ar-AE",
+        "name": "UAE Arabic Female - Natural",
+        "dialect": "United Arab Emirates",
+        "description": "Natural female voice with UAE dialect",
+        "recommended_for": ["general", "marketing", "customer_service"]
+      },
+      "male": {
+        "id": "ar-AE",
+        "name": "UAE Arabic Male - Natural",
+        "dialect": "United Arab Emirates",
+        "description": "Natural male voice with UAE dialect",
+        "recommended_for": ["professional", "trading", "business"]
+      }
+    },
+    "ar-EG": {
+      "female": {
+        "id": "ar-EG",
+        "name": "Egyptian Arabic Female - Natural",
+        "dialect": "Egypt",
+        "description": "Natural female voice with Egyptian dialect",
+        "recommended_for": ["media", "entertainment", "general"]
+      },
+      "male": {
+        "id": "ar-EG",
+        "name": "Egyptian Arabic Male - Natural",
+        "dialect": "Egypt",
+        "description": "Natural male voice with Egyptian dialect",
+        "recommended_for": ["media", "news", "educational"]
+      }
+    }
+  },
+  "backgrounds": {
+    "off_white": {
+      "name": "Off White",
+      "description": "Clean off-white background",
+      "recommended_for": ["professional", "corporate", "clean"]
+    },
+    "green_screen": {
+      "name": "Green Screen",
+      "description": "Green screen for custom backgrounds",
+      "recommended_for": ["custom_editing", "special_effects"]
+    },
+    "office": {
+      "name": "Office",
+      "description": "Professional office background",
+      "recommended_for": ["business", "corporate", "professional"]
+    },
+    "modern": {
+      "name": "Modern",
+      "description": "Modern minimalist background",
+      "recommended_for": ["tech", "startup", "innovation"]
+    }
+  },
+  "personas": {
+    "seekapa_trader": {
+      "avatar": "expert",
+      "voice": "ar-SA",
+      "gender": "male",
+      "background": "office",
+      "description": "Professional forex trader explaining Seekapa platform"
+    },
+    "seekapa_support": {
+      "avatar": "friendly",
+      "voice": "ar-SA",
+      "gender": "female",
+      "background": "modern",
+      "description": "Customer support representative for Seekapa"
+    },
+    "seekapa_educator": {
+      "avatar": "professional",
+      "voice": "ar-SA",
+      "gender": "female",
+      "background": "off_white",
+      "description": "Educational content about forex trading"
+    },
+    "axia_trader": {
+      "avatar": "expert",
+      "voice": "ar-AE",
+      "gender": "male",
+      "background": "office",
+      "description": "Professional forex trader explaining Axia platform"
+    },
+    "axia_support": {
+      "avatar": "friendly",
+      "voice": "ar-AE",
+      "gender": "female",
+      "background": "modern",
+      "description": "Customer support representative for Axia"
+    },
+    "axia_educator": {
+      "avatar": "professional",
+      "voice": "ar-AE",
+      "gender": "female",
+      "background": "off_white",
+      "description": "Educational content about forex trading on Axia"
+    }
+  },
+  "video_settings": {
+    "default": {
+      "test": false,
+      "visibility": "private",
+      "polling_interval": 30000,
+      "polling_timeout": 1800000,
+      "max_retries": 3
+    },
+    "branding": {
+      "logo_width": 120,
+      "logo_opacity": 0.3,
+      "logo_position": "bottom-right",
+      "logo_margin": 10
+    },
+    "validation": {
+      "min_duration": 10,
+      "max_duration": 600,
+      "max_file_size": 524288000
+    }
+  },
+  "api": {
+    "base_url": "https://api.synthesia.io/v2",
+    "endpoints": {
+      "create_video": "/videos",
+      "get_video": "/videos/{id}",
+      "list_videos": "/videos",
+      "delete_video": "/videos/{id}"
+    }
+  }
+}
