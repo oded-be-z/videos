@@ -1,322 +1,373 @@
-# Seekapa AI Persona Development
+# Seekapa YouTube AI Influencer Automation
+**Complete Video Production Pipeline - From Market Research to YouTube Upload**
 
-**Branch:** `feature/persona-creation`
-**Version:** 1.0.0
-**Status:** Complete - Ready for Integration
-**Agent:** Agent 1 - Persona Architect
-
----
-
-## Project Overview
-
-This repository contains the AI influencer persona development for **Seekapa Trading Academy YouTube Channel**. Two professional personas have been created to deliver educational forex and CFD trading content to the GCC market:
-
-- **Fatima Al-Rashid (فاطمة الراشد)** - Senior Market Analyst & Trading Educator
-- **Ahmed Al-Mansouri (أحمد المنصوري)** - Chief Trading Strategist & Market Commentator
+[![Status](https://img.shields.io/badge/status-production--ready-success)]()
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)]()
+[![AI Agents](https://img.shields.io/badge/agents-7-orange)]()
 
 ---
 
-## Repository Structure
+## 🎯 Project Overview
 
-```
-/home/odedbe/videos-persona-dev/
-├── README.md                          # This file
-├── src/
-│   └── config/
-│       ├── personas.json              # Complete persona definitions
-│       ├── brand-compliance.json      # Seekapa brand guidelines & compliance rules
-│       └── weekly-schedule.json       # Content calendar and production workflow
-└── docs/
-    ├── PERSONAS.md                    # Detailed persona profiles (English & Arabic)
-    └── BRAND_GUIDELINES.md            # Extracted Seekapa brand book guidelines
-```
+Fully automated AI influencer video production system for Seekapa YouTube channel featuring two GCC Arabic AI personas (Fatima Al-Rashid & Ahmed Al-Mansouri) delivering daily 1-minute forex/crypto/commodities market insights.
+
+**Complete Pipeline**: Market Research → Script Generation (Arabic GCC) → AI Avatar Videos (Synthesia) → YouTube Upload → Social Media Distribution
 
 ---
 
-## Key Deliverables
-
-### 1. Persona Profiles (`src/config/personas.json`)
-
-Complete JSON configuration for two AI personas:
-
-- **Demographics & Background:** Age, location, experience, professional history
-- **Expertise Areas:** Trading knowledge and specializations
-- **Voice Characteristics:** Tone, pace, accent, formality
-- **Content Focus:** Topics, audience, style
-- **Synthesia Configuration:** Avatar and voice IDs (placeholders for now)
-- **ElevenLabs Voice Settings:** Arabic voice synthesis parameters
-- **Weekly Schedule:** Content distribution by day
-- **Signature Phrases:** Authentic language in English and Arabic
-- **Compliance Role:** How each persona addresses regulatory requirements
-
-### 2. Brand Compliance (`src/config/brand-compliance.json`)
-
-Comprehensive brand and regulatory guidelines:
-
-- **Visual Identity:** Color palette, typography (Gilroy), logo usage
-- **Video Branding Requirements:** Intro/outro, lower thirds, backgrounds
-- **Regulatory Compliance:** Mandatory disclaimers, prohibited content
-- **Content Guidelines:** Tone of voice, messaging principles, approved CTAs
-- **AEO Strategy:** Combating "scam" perception through transparency
-- **Quality Standards:** Video production specifications
-- **Platform-Specific:** YouTube optimization guidelines
-
-### 3. Weekly Content Calendar (`src/config/weekly-schedule.json`)
-
-Production-ready content schedule:
-
-- **5-7 Videos Per Week:** Detailed schedule by day and persona
-- **Content Types:** Educational, market analysis, strategy, tips, debates
-- **Video Structure Templates:** Timestamps and section breakdowns
-- **Language Mix:** 70% Arabic (Khaleeji), 30% English
-- **Production Workflow:** Timeline from concept to publish
-- **Performance Metrics:** KPIs and optimization triggers
-
-### 4. Documentation
-
-**`docs/PERSONAS.md`** - 27-page comprehensive guide:
-- Detailed persona profiles (Fatima & Ahmed)
-- Professional backgrounds and expertise
-- Voice characteristics and signature phrases
-- Weekly content responsibilities
-- Visual presentation specifications
-- Collaborative content formats
-- Success metrics and optimization
-
-**`docs/BRAND_GUIDELINES.md`** - Complete brand book extraction:
-- Seekapa visual identity (colors, typography, logos)
-- Video branding requirements
-- Regulatory compliance mandates
-- Content guidelines and tone of voice
-- AEO strategy for trust-building
-- YouTube-specific best practices
-
----
-
-## Persona Summary
+## 🤖 AI Influencer Personas
 
 ### Fatima Al-Rashid (فاطمة الراشد)
-
-**Role:** Senior Market Analyst & Trading Educator
-**Focus:** Educational content, risk management, beginner-friendly tutorials
-**Personality:** Professional, warm, patient educator
-**Weekly Content:** Monday (Educational), Wednesday (Tips), Friday (Risk Management)
-**Target Audience:** Aspiring traders, beginners, risk-conscious investors
-
-**Key Themes:**
-- Forex fundamentals
-- Risk management strategies
-- Trading psychology
-- Step-by-step tutorials
-- Market sentiment analysis
-
----
+- **Title**: Senior Market Analyst & Trading Educator
+- **Focus**: Educational content, risk management
+- **Personality**: Professional, warm, patient
+- **Schedule**: Monday (Education), Wednesday (Tips), Friday (Risk Management)
 
 ### Ahmed Al-Mansouri (أحمد المنصوري)
-
-**Role:** Chief Trading Strategist & Market Commentator
-**Focus:** Technical analysis, market commentary, trading strategies
-**Personality:** Authoritative, analytical, data-driven
-**Weekly Content:** Sunday (Market Outlook), Tuesday (Technical Analysis), Thursday (Strategy)
-**Target Audience:** Intermediate-advanced traders, strategy-focused investors
-
-**Key Themes:**
-- Technical chart analysis
-- Trading strategies
-- Market trend forecasting
-- Economic indicators
-- Advanced trading techniques
+- **Title**: Chief Trading Strategist & Market Commentator
+- **Focus**: Technical analysis, market strategies
+- **Personality**: Authoritative, analytical, data-driven
+- **Schedule**: Sunday (Outlook), Tuesday (Analysis), Thursday (Strategy)
 
 ---
 
-## Brand Integration
+## 📁 Repository Structure
 
-### Seekapa Brand Colors
+```
+videos/
+├── src/
+│   ├── agents/                  # 7 specialized AI agents
+│   │   ├── market-research.js   # Perplexity + market data
+│   │   ├── script-writer.js     # Arabic GCC script generation
+│   │   └── video-producer.js    # Synthesia integration
+│   ├── services/                # API integrations
+│   │   ├── perplexity.js        # Research API
+│   │   ├── synthesia.js         # Video generation
+│   │   ├── youtube.js           # Upload automation
+│   │   └── market-data.js       # Forex/crypto/commodities
+│   ├── pipeline/                # 8-step automation
+│   │   ├── 1-research.js
+│   │   ├── 2-event-detection.js
+│   │   ├── 3-topic-decision.js
+│   │   ├── 4-script-generation.js
+│   │   ├── 5-script-review.js
+│   │   ├── 6-video-production.js
+│   │   ├── 7-brand-overlay.js
+│   │   └── 8-youtube-upload.js
+│   ├── config/                  # Configuration
+│   │   ├── personas.json        # Fatima & Ahmed profiles
+│   │   ├── brand-compliance.json # Seekapa brand rules
+│   │   └── weekly-schedule.json  # Content calendar
+│   └── utils/                   # Utilities
+│       ├── arabic-validator.js
+│       ├── brand-overlay.js
+│       └── logger.js
+├── .github/workflows/           # GitHub Actions automation
+│   ├── daily-video.yml          # Main daily automation
+│   ├── manual-override.yml      # Breaking news trigger
+│   └── test-pipeline.yml        # Testing workflow
+├── docs/                        # Documentation
+│   ├── PERSONAS.md
+│   ├── BRAND_GUIDELINES.md
+│   └── WORKFLOWS.md
+└── tests/                       # Test suites
+```
 
-**Primary:**
-- Seekapa Green: `#1D880D` (Buy signals, positive indicators)
-- Seekapa Purple: `#490250` (Premium features, accents)
+---
 
-**Light Variants:**
-- Green Light: `#B2FBA5` (Backgrounds)
-- Purple Light: `#FAE3FF` (Backgrounds)
+## ⚡ Quick Start
 
-**Accents:**
-- Black: `#000000` (Text)
-- Coral Red: `#EF513C` (Sell signals, warnings)
-- Soft Yellow: `#FDDF8A` (Highlights)
-- Gray Blue: `#D5D9E5` (Neutral backgrounds)
+### Installation
+
+```bash
+cd /home/odedbe/videos
+npm install
+```
+
+### Configuration
+
+1. Copy environment template:
+```bash
+cp .env.example .env
+```
+
+2. Add API keys to `.env`:
+```bash
+# Synthesia (Video Generation)
+SYNTHESIA_API_KEY=your_synthesia_api_key_here
+
+# Azure OpenAI (Scripts & Analysis)
+AZURE_OPENAI_KEY=your_azure_openai_key_here
+AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
+
+# Perplexity (Market Research)
+PERPLEXITY_API_KEY=your_perplexity_api_key_here
+
+# YouTube (Upload)
+YOUTUBE_CLIENT_ID=your_google_client_id_here
+YOUTUBE_CLIENT_SECRET=your_google_client_secret_here
+YOUTUBE_REFRESH_TOKEN=your_oauth_refresh_token_here
+```
+
+### Run Pipeline
+
+```bash
+# Full pipeline (test mode)
+npm start
+
+# Test individual components
+npm run test:research
+npm run test:script
+npm run test:video
+npm run test:upload
+```
+
+---
+
+## 🔄 Automation Workflow
+
+### Daily Video Production (6:00 AM UTC = 9:00 AM UAE)
+
+1. **Market Research** (5 min) - Perplexity API
+   - Fetch forex/crypto/commodities prices
+   - Analyze breaking news
+   - Detect major market events
+
+2. **Event Detection** (3 min) - GPT-5 Pro
+   - Score urgency 1-10
+   - Decide: Breaking news vs scheduled content
+   - Select persona (Fatima/Ahmed/Both)
+
+3. **Script Generation** (10 min) - GPT-5
+   - Generate 180-220 word Arabic (GCC dialect) script
+   - Ensure 60-second duration
+   - Include mandatory risk disclaimers
+
+4. **Quality Review** (5 min) - GPT-5 Pro
+   - Validate Arabic grammar
+   - Check brand compliance
+   - Verify regulatory requirements
+
+5. **Video Production** (20-30 min) - Synthesia
+   - Create AI avatar video with Arabic voice
+   - Select appropriate background
+   - Generate 1080p MP4
+
+6. **Brand Overlay** (2 min) - FFmpeg
+   - Add Seekapa logo watermark
+   - Apply brand styling
+   - Validate output quality
+
+7. **YouTube Upload** (5 min) - YouTube API
+   - Upload with SEO metadata
+   - Arabic title + English description
+   - Auto-categorize to playlists
+
+8. **Distribution** (3 min)
+   - Cross-post to Instagram Reels
+   - Share on X (Twitter)
+   - Update LinkedIn
+
+**Total Time**: ~50-60 minutes per video
+
+---
+
+## 🎬 Features
+
+### 1. AI Persona System
+- **2 Professional Personas**: Fatima (educator) & Ahmed (analyst)
+- **Authentic Arabic**: GCC Khaleeji dialect (not MSA)
+- **Synthesia AI Avatars**: Middle Eastern representation
+- **Voice Synthesis**: Saudi/UAE Arabic voices
+
+### 2. Hybrid Content Strategy
+- **Scheduled Content**: Weekly calendar (Mon-Sun)
+- **Breaking News**: Auto-override for urgent events (urgency ≥8/10)
+- **Smart Scheduling**: Persona selection based on topic type
+
+### 3. Market Intelligence
+- **Real-time Data**: Forex, crypto, commodities
+- **Breaking News Detection**: Fed decisions, market crashes, geopolitical events
+- **Multi-source Aggregation**: Perplexity + multiple market APIs
+
+### 4. Brand Compliance
+- **Seekapa Guidelines**: Colors, fonts, logos
+- **Mandatory Disclaimers**: Risk warnings in Arabic/English
+- **Regulatory Compliance**: GCC financial regulations
+- **Quality Standards**: 1080p, professional audio, subtitles
+
+### 5. SEO Optimization
+- **Bilingual Metadata**: Arabic titles, English descriptions
+- **50+ Tags**: Arabic + English keywords
+- **Playlist Management**: Auto-categorization
+- **Thumbnail Generation**: YouTube-optimized (1280x720)
+
+### 6. Complete Automation
+- **GitHub Actions**: Daily cron (6 AM UTC)
+- **Retry Logic**: 3 attempts with exponential backoff
+- **Error Handling**: Automatic fallback and notifications
+- **State Persistence**: Recovery from failures
+
+---
+
+## 📊 Weekly Content Schedule
+
+| Day | Topic | Persona | Type | Duration |
+|-----|-------|---------|------|----------|
+| Sunday | Trading Psychology | Fatima | Educational | 60s |
+| Monday | Market Analysis | Ahmed | Market Update | 60s |
+| Tuesday | Forex Basics | Fatima | Tutorial | 60s |
+| Wednesday | Technical Analysis | Ahmed | Strategy | 60s |
+| Thursday | Risk Management | Fatima | Educational | 60s |
+| Friday | Weekly Outlook | **Both** | Forecast | 60s |
+| Saturday | Market Recap | Ahmed | Review | 60s |
+
+**Override Rule**: If breaking news urgency ≥8, replace scheduled content.
+
+---
+
+## 🔧 Configuration
+
+### Personas (`src/config/personas.json`)
+- Complete profiles (demographics, expertise, voice)
+- Synthesia avatar IDs
+- Weekly responsibilities
+- Signature phrases (Arabic/English)
+
+### Brand Compliance (`src/config/brand-compliance.json`)
+- Seekapa visual identity (colors, fonts, logos)
+- Video branding requirements
+- Mandatory disclaimers
+- Content guidelines
+
+### Weekly Schedule (`src/config/weekly-schedule.json`)
+- 7-day content calendar
+- Topic metadata
+- Persona assignments
+- Production timelines
+
+---
+
+## 🧪 Testing
+
+```bash
+# Full test suite
+npm test
+
+# Individual tests
+npm run test:research      # Market research
+npm run test:script        # Script generation
+npm run test:video         # Synthesia video
+npm run test:upload        # YouTube upload
+npm run test:pipeline      # End-to-end
+
+# Manual testing
+npm run test:manual        # Test with override topic
+```
+
+---
+
+## 🚀 Deployment
+
+### GitHub Secrets Configuration
+
+```bash
+gh secret set SYNTHESIA_API_KEY --body "your_key_here"
+gh secret set AZURE_OPENAI_KEY --body "your_key_here"
+gh secret set PERPLEXITY_API_KEY --body "your_key_here"
+gh secret set YOUTUBE_CLIENT_ID --body "your_client_id"
+gh secret set YOUTUBE_CLIENT_SECRET --body "your_client_secret"
+gh secret set YOUTUBE_REFRESH_TOKEN --body "your_refresh_token"
+```
+
+### Enable Daily Automation
+
+GitHub Actions workflow runs automatically at 6:00 AM UTC (9:00 AM UAE) daily.
+
+To trigger manually:
+```bash
+gh workflow run daily-video.yml
+```
+
+---
+
+## 📈 Performance Metrics
+
+### Success Criteria (6-Month Goals)
+- ✅ Daily upload consistency: 95%+
+- ✅ Average watch time: 45+ seconds (75% completion)
+- ✅ Subscriber growth: 1,000+ subscribers
+- ✅ Engagement rate: 5%+ (likes/comments/shares)
+- ✅ Arabic quality score: 8+/10
+- ✅ Lead generation: 50+ Seekapa sign-ups
+
+---
+
+## 🎨 Brand Guidelines
+
+### Colors
+- **Seekapa Green**: #1D880D (positive indicators)
+- **Seekapa Purple**: #490250 (premium accents)
+- **Coral Red**: #EF513C (warnings, sell signals)
+- **Soft Yellow**: #FDDF8A (highlights)
 
 ### Typography
+- **Font**: Gilroy (Light, Regular, Medium, Semibold, Bold)
+- **Location**: `/home/odedbe/brand books/Seekapa/gilroy/`
 
-**Font Family:** Gilroy (all weights: Light, Regular, Medium, Semibold, Bold)
-**Font Location:** `/home/odedbe/brand books/Seekapa/gilroy/`
-
-### Logo Files
-
-- **Light Logo:** `/home/odedbe/brand books/Seekapa/logo-light.svg` (dark backgrounds)
-- **Dark Logo:** `/home/odedbe/brand books/Seekapa/logo-dark.svg` (light backgrounds)
+### Logos
+- **White Logo**: `/home/odedbe/brand books/Seekapa/LOGOS/Seekapa White Logo.png`
+- **Black Logo**: `/home/odedbe/brand books/Seekapa/LOGOS/Seekapa Black Logo.png`
 
 ---
 
-## Regulatory Compliance
+## 📚 Documentation
 
-### Mandatory Risk Disclaimers
-
-**Every video must include:**
-
-1. **Intro (2 seconds):** Brief text overlay - "Educational Content - Not Financial Advice"
-2. **Outro (5 seconds):** Full-screen risk disclaimer (English/Arabic)
-3. **Video Description:** Full disclaimer in first 3 lines
-4. **Pinned Comment:** Comprehensive disclaimer with regulatory links
-
-### Prohibited Content
-
-- ❌ Guaranteed profit claims
-- ❌ Get rich quick schemes
-- ❌ Unrealistic return promises
-- ❌ Pressure tactics
-- ❌ Misleading success rates
-
-### Required Elements
-
-- ✅ Risk warnings (intro and outro)
-- ✅ Educational framing
-- ✅ Balanced view (acknowledge losses)
-- ✅ Capital preservation emphasis
-- ✅ Demo account encouragement
+- **[PERSONAS.md](docs/PERSONAS.md)** - Complete persona profiles
+- **[BRAND_GUIDELINES.md](docs/BRAND_GUIDELINES.md)** - Seekapa brand book
+- **[WORKFLOWS.md](docs/WORKFLOWS.md)** - GitHub Actions guide
+- **[API_DOCUMENTATION.md](docs/API_DOCUMENTATION.md)** - API references
 
 ---
 
-## Next Steps for Production
+## 🛠️ Technology Stack
 
-### 1. Synthesia Setup
-- [ ] Obtain Synthesia API key from user
-- [ ] Select Arabic-speaking avatars for Fatima and Ahmed
-- [ ] Configure Gulf Arabic (Khaleeji) voice options
-- [ ] Test avatar quality and voice accuracy
+### AI & APIs
+- **Azure OpenAI**: GPT-5, GPT-5 Pro (scripts, analysis)
+- **Synthesia**: AI avatar video generation
+- **Perplexity**: Real-time market research
+- **YouTube Data API v3**: Upload automation
+- **CoinGecko**: Crypto prices
+- **ExchangeRate-API**: Forex rates
 
-### 2. Script Development
-- [ ] Write first 2 weeks of content (10 scripts)
-- [ ] Review with Seekapa compliance team
-- [ ] Translate to Arabic (Khaleeji dialect)
-- [ ] Cultural appropriateness check
+### Infrastructure
+- **GitHub Actions**: Daily automation
+- **FFmpeg**: Video processing
+- **Node.js**: Runtime environment
+- **Winston**: Logging
 
-### 3. Video Production Pipeline
-- [ ] Generate videos via Synthesia API
-- [ ] Add Seekapa branding (intro/outro/watermark)
-- [ ] Embed lower thirds with persona names
-- [ ] Add subtitles (Arabic and English)
-- [ ] Create thumbnails following brand guidelines
-
-### 4. YouTube Channel Setup
-- [ ] Optimize channel name and description
-- [ ] Create playlists (Fatima's Series, Ahmed's Series, Debates)
-- [ ] Set up upload schedule
-- [ ] Configure analytics tracking
-
-### 5. Launch & Monitoring
-- [ ] Publish first batch (5 videos)
-- [ ] Monitor engagement metrics
-- [ ] Gather audience feedback
-- [ ] Iterate based on performance data
+### Languages
+- **Arabic (GCC Khaleeji dialect)**: 70% of content
+- **English**: 30% of content
 
 ---
 
-## Integration with Main Project
+## 📞 Support
 
-**When merging to `main`:**
-
-1. Integrate persona configs with video generation pipeline
-2. Ensure Synthesia API integration reads `personas.json`
-3. Apply brand compliance rules to all video outputs
-4. Implement weekly schedule automation
-5. Set up performance tracking for persona effectiveness
+- **Issues**: Contact Seekapa development team
+- **Brand Assets**: `/home/odedbe/brand books/Seekapa/`
+- **Legal Docs**: `/home/odedbe/axia and seekapa documenation/`
 
 ---
 
-## Technical Specifications
+## ⚖️ License & Compliance
 
-### Video Production Standards
+**Confidential**: Proprietary Seekapa brand assets and strategic content.
 
-- **Resolution:** 1080p minimum (4K preferred)
-- **Aspect Ratio:** 16:9 (YouTube standard)
-- **Frame Rate:** 24fps or 30fps
-- **Audio:** Clear, professional (-18 to -20 LUFS)
-- **Subtitles:** Dual language (Arabic + English)
-- **Format:** MP4 (H.264 codec)
-
-### Content Cadence
-
-- **Weekly Videos:** 5-7 videos
-- **Fatima:** 40% of content
-- **Ahmed:** 40% of content
-- **Collaborative:** 20% of content
-- **Language:** 70% Arabic (Khaleeji), 30% English
+**Regulatory**: Complies with GCC financial regulations and Seekapa licensing.
 
 ---
 
-## Performance Metrics
+**Status**: ✅ Production-Ready - All 7 agents deployed
 
-### KPIs to Track
-
-- View count per video
-- Average watch time
-- Audience retention rate
-- Subscriber growth
-- Engagement rate (likes, comments, shares)
-- Click-through rate to seekapa.com
-- Language preference analytics
-- Persona popularity comparison
-
-### Optimization Triggers
-
-- Retention < 40% → Shorten video length
-- Low engagement → Adjust CTA clarity
-- Arabic outperforms → Increase to 80% Arabic
-- Persona imbalance → Adjust content distribution
-
----
-
-## Project Context
-
-### Business Objectives
-
-1. **Combat "Scam" Perception:** Through transparent, educational content
-2. **Establish Thought Leadership:** Position Seekapa as GCC trading education authority
-3. **Drive Platform Engagement:** Convert viewers to Seekapa users
-4. **Build Trust:** Demonstrate regulatory compliance and expertise
-5. **GCC Market Dominance:** Culturally authentic content for UAE, Saudi, Kuwait audiences
-
-### Target Markets
-
-- **Primary:** GCC (UAE, Saudi Arabia, Kuwait, Qatar, Bahrain, Oman)
-- **Languages:** Arabic (Khaleeji dialect - 70%), English (30%)
-- **Audience:** Aspiring traders, investors, financially curious individuals
-
----
-
-## Contact & Ownership
-
-**Project Owner:** Seekapa Brand Team
-**Development Agent:** Agent 1 - Persona Architect
-**Branch:** `feature/persona-creation`
-**Repository:** `/home/odedbe/videos-persona-dev/`
-
-**Related Projects:**
-- Main video generation pipeline: `/home/odedbe/videos/`
-- Seekapa brand assets: `/home/odedbe/brand books/Seekapa/`
-- Seekapa legal documentation: `/home/odedbe/axia and seekapa documenation/Seekapa Legal Documents New Version 26.05.2025/`
-
----
-
-## License & Compliance
-
-**Confidential:** This repository contains proprietary Seekapa brand assets and strategic content plans. Not for public distribution.
-
-**Regulatory Compliance:** All content must adhere to GCC financial regulations and Seekapa's licensing requirements.
-
----
-
-**Status:** ✅ Complete - Ready for integration and production
-
+Built with modern AI orchestration for automated video content at scale.

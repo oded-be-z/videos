@@ -1,0 +1,29 @@
+{
+  "name": "videos-research-agent",
+  "version": "1.0.0",
+  "description": "AI-powered market research engine for real-time forex, crypto, and commodities intelligence",
+  "main": "src/agents/market-research.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/test-research.js",
+    "start": "node src/agents/market-research.js"
+  },
+  "keywords": [
+    "market-research",
+    "forex",
+    "crypto",
+    "commodities",
+    "perplexity",
+    "trading",
+    "ai",
+    "research-engine"
+  ],
+  "author": "Seekapa Team",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.3"
+  }
+}
