@@ -1,0 +1,33 @@
+{
+  "name": "seekapa-video-workflow-automation",
+  "version": "1.0.0",
+  "description": "GitHub Actions workflows for automated daily Seekapa video production",
+  "main": "src/scheduler/hybrid-logic.js",
+  "scripts": {
+    "test": "echo \"Tests will be added\" && exit 0",
+    "lint": "echo \"Linting will be configured\" && exit 0",
+    "format:check": "echo \"Format checking will be configured\" && exit 0",
+    "test:hybrid": "node src/scheduler/hybrid-logic.js --test",
+    "test:persona": "node src/scheduler/persona-selector.js --test",
+    "show:schedule": "node src/scheduler/weekly-calendar.js"
+  },
+  "keywords": [
+    "github-actions",
+    "automation",
+    "video-production",
+    "seekapa",
+    "forex",
+    "content-automation"
+  ],
+  "author": "Seekapa Team",
+  "license": "PRIVATE",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oded-be-z/videos-workflow-agent.git"
+  }
+}

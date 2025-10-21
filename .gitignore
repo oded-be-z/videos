@@ -1,0 +1,39 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Output
+output/
+logs/
+*.mp4
+*.mp3
+*.wav
+*.json.bak
+
+# Environment
+.env
+.env.local
+.env.production
+secrets.json
+
+# Testing
+test-results/
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary
+tmp/
+temp/
+*.tmp

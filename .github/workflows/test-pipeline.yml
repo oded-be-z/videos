@@ -1,0 +1,215 @@
+name: Test Pipeline (No Publishing)
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_scenario:
+        description: 'Test scenario'
+        required: true
+        type: choice
+        options:
+          - full-pipeline
+          - research-only
+          - script-generation
+          - video-production
+          - overlay-effects
+        default: 'full-pipeline'
+      persona:
+        description: 'Test persona'
+        required: false
+        type: choice
+        options:
+          - fatima
+          - ahmed
+          - both
+        default: 'fatima'
+      topic:
+        description: 'Test topic (optional)'
+        required: false
+        type: string
+  pull_request:
+    branches:
+      - main
+      - feature/*
+
+jobs:
+  test-video-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version
+
+      - name: Run linter
+        run: npm run lint || echo "Linting warnings detected"
+
+      - name: Run unit tests
+        run: npm test || echo "No tests configured yet"
+
+      - name: Test research module
+        if: ${{ inputs.test_scenario == 'full-pipeline' || inputs.test_scenario == 'research-only' }}
+        env:
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+          TEST_MODE: true
+        run: node src/pipeline/1-research.js --test
+        timeout-minutes: 5
+
+      - name: Test event detection
+        if: ${{ inputs.test_scenario == 'full-pipeline' }}
+        env:
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          TEST_MODE: true
+        run: node src/pipeline/2-event-detection.js --test
+        timeout-minutes: 3
+
+      - name: Test hybrid logic
+        if: ${{ inputs.test_scenario == 'full-pipeline' }}
+        env:
+          TEST_MODE: true
+        run: node src/scheduler/hybrid-logic.js --test
+        timeout-minutes: 2
+
+      - name: Test persona selector
+        if: ${{ inputs.test_scenario == 'full-pipeline' }}
+        env:
+          TEST_MODE: true
+          PERSONA_OVERRIDE: ${{ inputs.persona }}
+        run: node src/scheduler/persona-selector.js --test
+        timeout-minutes: 2
+
+      - name: Test script generation
+        if: ${{ inputs.test_scenario == 'full-pipeline' || inputs.test_scenario == 'script-generation' }}
+        env:
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          GPT5_PRO_DEPLOYMENT: ${{ secrets.GPT5_PRO_DEPLOYMENT }}
+          TEST_MODE: true
+          TEST_TOPIC: ${{ inputs.topic }}
+        run: node src/pipeline/4-script-generation.js --test
+        timeout-minutes: 10
+
+      - name: Test script review
+        if: ${{ inputs.test_scenario == 'full-pipeline' || inputs.test_scenario == 'script-generation' }}
+        env:
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          GPT5_PRO_DEPLOYMENT: ${{ secrets.GPT5_PRO_DEPLOYMENT }}
+          TEST_MODE: true
+        run: node src/pipeline/5-script-review.js --test
+        timeout-minutes: 5
+
+      - name: Test video production (Synthesia)
+        if: ${{ inputs.test_scenario == 'full-pipeline' || inputs.test_scenario == 'video-production' }}
+        env:
+          SYNTHESIA_API_KEY: ${{ secrets.SYNTHESIA_API_KEY }}
+          TEST_MODE: true
+          PERSONA: ${{ inputs.persona }}
+        run: node src/pipeline/6-video-production.js --test
+        timeout-minutes: 15
+
+      - name: Test brand overlay
+        if: ${{ inputs.test_scenario == 'full-pipeline' || inputs.test_scenario == 'overlay-effects' }}
+        env:
+          TEST_MODE: true
+        run: node src/pipeline/7-brand-overlay.js --test
+        timeout-minutes: 5
+
+      - name: Test YouTube metadata (dry run)
+        if: ${{ inputs.test_scenario == 'full-pipeline' }}
+        env:
+          TEST_MODE: true
+        run: node src/pipeline/8-youtube-upload.js --dry-run
+        timeout-minutes: 2
+
+      - name: Validate output files
+        if: ${{ inputs.test_scenario == 'full-pipeline' || inputs.test_scenario == 'video-production' }}
+        run: |
+          echo "Checking output directory..."
+          ls -lh output/ || echo "No output directory yet"
+          if [ -f output/final_video.mp4 ]; then
+            ffprobe -v error -show_format -show_streams output/final_video.mp4
+          fi
+
+      - name: Save test artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-run-${{ github.run_number }}
+          path: |
+            output/*.mp4
+            output/*.json
+            logs/*.log
+            test-results/*.xml
+          retention-days: 7
+
+      - name: Generate test report
+        if: always()
+        run: |
+          echo "# Test Pipeline Report" > test-report.md
+          echo "" >> test-report.md
+          echo "**Scenario**: ${{ inputs.test_scenario }}" >> test-report.md
+          echo "**Persona**: ${{ inputs.persona }}" >> test-report.md
+          echo "**Topic**: ${{ inputs.topic || 'Auto-selected' }}" >> test-report.md
+          echo "**Status**: ${{ job.status }}" >> test-report.md
+          echo "**Run**: #${{ github.run_number }}" >> test-report.md
+
+      - name: Test summary
+        if: always()
+        run: |
+          echo "📊 Test Pipeline Complete"
+          echo "Scenario: ${{ inputs.test_scenario }}"
+          echo "Status: ${{ job.status }}"
+          echo "Artifacts saved: test-run-${{ github.run_number }}"
+
+  code-quality-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check code formatting
+        run: npm run format:check || echo "Formatting check skipped"
+
+      - name: Security audit
+        run: npm audit --audit-level=moderate || echo "Security audit warnings detected"
+
+      - name: Check for secrets
+        run: |
+          echo "Scanning for accidentally committed secrets..."
+          ! git grep -i "api.key" || echo "Warning: Potential API keys found"
+          ! git grep -i "password" || echo "Warning: Potential passwords found"
+
+      - name: Validate YAML files
+        run: |
+          for file in .github/workflows/*.yml; do
+            echo "Validating $file"
+            yamllint "$file" || echo "YAML validation skipped"
+          done

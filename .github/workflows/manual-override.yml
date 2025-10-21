@@ -1,0 +1,162 @@
+name: Manual Override - Breaking News Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Breaking news topic'
+        required: true
+        type: string
+      urgency:
+        description: 'Urgency level (1-10)'
+        required: true
+        type: choice
+        options:
+          - '10'
+          - '9'
+          - '8'
+          - '7'
+          - '6'
+          - '5'
+        default: '8'
+      persona:
+        description: 'Avatar persona'
+        required: true
+        type: choice
+        options:
+          - both
+          - fatima
+          - ahmed
+        default: 'both'
+      publish_immediately:
+        description: 'Publish to YouTube immediately'
+        required: true
+        type: boolean
+        default: true
+      notify_team:
+        description: 'Send Slack/email notification'
+        required: false
+        type: boolean
+        default: true
+
+jobs:
+  breaking-news-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version
+
+      - name: Log breaking news trigger
+        run: |
+          echo "🚨 BREAKING NEWS OVERRIDE TRIGGERED 🚨"
+          echo "Topic: ${{ inputs.topic }}"
+          echo "Urgency: ${{ inputs.urgency }}/10"
+          echo "Persona: ${{ inputs.persona }}"
+          echo "Publish: ${{ inputs.publish_immediately }}"
+          echo "Triggered by: ${{ github.actor }}"
+          echo "Timestamp: $(date)"
+
+      - name: Research breaking news
+        env:
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+          BREAKING_NEWS_TOPIC: ${{ inputs.topic }}
+        run: node src/pipeline/1-research.js --breaking-news
+        timeout-minutes: 5
+
+      - name: Generate urgent script
+        env:
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          GPT5_PRO_DEPLOYMENT: ${{ secrets.GPT5_PRO_DEPLOYMENT }}
+          BREAKING_NEWS_TOPIC: ${{ inputs.topic }}
+          URGENCY_LEVEL: ${{ inputs.urgency }}
+          PERSONA: ${{ inputs.persona }}
+        run: node src/pipeline/4-script-generation.js --breaking-news
+        timeout-minutes: 8
+
+      - name: Express review
+        env:
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          GPT5_PRO_DEPLOYMENT: ${{ secrets.GPT5_PRO_DEPLOYMENT }}
+        run: node src/pipeline/5-script-review.js --express
+        timeout-minutes: 3
+
+      - name: Produce video (Synthesia)
+        env:
+          SYNTHESIA_API_KEY: ${{ secrets.SYNTHESIA_API_KEY }}
+          PERSONA: ${{ inputs.persona }}
+        run: node src/pipeline/6-video-production.js
+        timeout-minutes: 20
+
+      - name: Add breaking news overlay
+        env:
+          BREAKING_NEWS: true
+        run: node src/pipeline/7-brand-overlay.js --breaking-news
+        timeout-minutes: 5
+
+      - name: Upload to YouTube (if enabled)
+        if: ${{ inputs.publish_immediately }}
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          BREAKING_NEWS: true
+        run: node src/pipeline/8-youtube-upload.js --breaking-news
+        timeout-minutes: 10
+
+      - name: Save artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: breaking-news-${{ github.run_number }}
+          path: |
+            output/*.mp4
+            output/*.json
+            logs/*.log
+          retention-days: 90
+
+      - name: Notify team (if enabled)
+        if: ${{ inputs.notify_team && success() }}
+        run: |
+          echo "🔔 Notification would be sent here"
+          echo "TODO: Add Slack/Discord/Email integration"
+
+      - name: Success summary
+        if: success()
+        run: |
+          echo "✅ Breaking news video published successfully!"
+          echo "Topic: ${{ inputs.topic }}"
+          echo "Urgency: ${{ inputs.urgency }}/10"
+          echo "Published: ${{ inputs.publish_immediately }}"
+
+      - name: Failure alert
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🚨 URGENT: Breaking news video failed - "${context.payload.inputs.topic}"`,
+              body: `Breaking news video production failed!\n\nTopic: ${context.payload.inputs.topic}\nUrgency: ${context.payload.inputs.urgency}/10\nTriggered by: ${context.actor}\n\nRun: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\n\n**Immediate action required!**`,
+              labels: ['urgent', 'breaking-news', 'automation', 'bug'],
+              assignees: [context.actor]
+            })

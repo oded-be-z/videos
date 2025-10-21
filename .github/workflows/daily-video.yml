@@ -1,0 +1,160 @@
+name: Daily Seekapa Video Production
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # 6:00 AM UTC = 9:00 AM UAE
+  workflow_dispatch:      # Manual trigger
+    inputs:
+      override_topic:
+        description: 'Override topic (leave blank for auto)'
+        required: false
+        type: string
+      persona:
+        description: 'Force persona (fatima/ahmed/both)'
+        required: false
+        type: choice
+        options:
+          - auto
+          - fatima
+          - ahmed
+          - both
+        default: 'auto'
+      skip_upload:
+        description: 'Skip YouTube upload (test mode)'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  produce-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version
+
+      - name: Verify environment
+        run: |
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+          echo "Date: $(date)"
+          echo "Workflow triggered by: ${{ github.event_name }}"
+
+      - name: Run market research
+        env:
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+        run: node src/pipeline/1-research.js
+        continue-on-error: false
+
+      - name: Detect breaking news
+        env:
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+        run: node src/pipeline/2-event-detection.js
+        continue-on-error: false
+
+      - name: Decide topic (hybrid logic)
+        env:
+          OVERRIDE_TOPIC: ${{ inputs.override_topic }}
+        run: node src/scheduler/hybrid-logic.js
+        continue-on-error: false
+
+      - name: Select persona
+        env:
+          PERSONA_OVERRIDE: ${{ inputs.persona }}
+        run: node src/scheduler/persona-selector.js
+        continue-on-error: false
+
+      - name: Generate Arabic script
+        env:
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          GPT5_PRO_DEPLOYMENT: ${{ secrets.GPT5_PRO_DEPLOYMENT }}
+        run: node src/pipeline/4-script-generation.js
+        timeout-minutes: 10
+        continue-on-error: false
+
+      - name: Review script quality
+        env:
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          GPT5_PRO_DEPLOYMENT: ${{ secrets.GPT5_PRO_DEPLOYMENT }}
+        run: node src/pipeline/5-script-review.js
+        timeout-minutes: 5
+        continue-on-error: false
+
+      - name: Create video (Synthesia)
+        env:
+          SYNTHESIA_API_KEY: ${{ secrets.SYNTHESIA_API_KEY }}
+        run: node src/pipeline/6-video-production.js
+        timeout-minutes: 20
+        continue-on-error: false
+
+      - name: Add brand overlay
+        run: node src/pipeline/7-brand-overlay.js
+        timeout-minutes: 5
+        continue-on-error: false
+
+      - name: Upload to YouTube
+        if: ${{ !inputs.skip_upload }}
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: node src/pipeline/8-youtube-upload.js
+        timeout-minutes: 10
+        continue-on-error: false
+
+      - name: Save artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: video-production-${{ github.run_number }}
+          path: |
+            output/*.mp4
+            output/*.json
+            logs/*.log
+          retention-days: 30
+
+      - name: Notify success
+        if: success()
+        run: |
+          echo "✅ Video published successfully!"
+          echo "Run number: ${{ github.run_number }}"
+          echo "Timestamp: $(date)"
+
+      - name: Notify failure
+        if: failure()
+        run: |
+          echo "❌ Pipeline failed. Check logs."
+          echo "Run number: ${{ github.run_number }}"
+          echo "Failed step: Check actions log"
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Daily video production failed - Run #${context.runNumber}`,
+              body: `The daily video production workflow failed.\n\nRun: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\n\nPlease investigate.`,
+              labels: ['automation', 'video-production', 'bug']
+            })
