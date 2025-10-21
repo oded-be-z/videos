@@ -1,0 +1,120 @@
+{
+  "channel": {
+    "name": "Seekapa - تداول الفوركس",
+    "description": "منصة Seekapa للتداول - تحليلات يومية، نصائح تداول، وتعليم شامل للفوركس والعملات المشفرة",
+    "defaultLanguage": "ar",
+    "country": "AE"
+  },
+  "upload": {
+    "defaultPrivacyStatus": "public",
+    "defaultCategoryId": "22",
+    "selfDeclaredMadeForKids": false,
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "notifySubscribers": true
+  },
+  "thumbnails": {
+    "enabled": true,
+    "autoGenerate": true,
+    "width": 1280,
+    "height": 720,
+    "quality": 2,
+    "extractTimestamp": "middle"
+  },
+  "playlists": {
+    "autoAdd": true,
+    "createIfMissing": true,
+    "standard": [
+      {
+        "id": null,
+        "name": "Seekapa - كل الفيديوهات",
+        "description": "جميع فيديوهات قناة Seekapa للتداول والأسواق المالية",
+        "autoAdd": true
+      },
+      {
+        "id": null,
+        "name": "تحديثات السوق اليومية",
+        "description": "تحديثات يومية لأسواق الفوركس والعملات المشفرة",
+        "videoTypes": ["market_update"]
+      },
+      {
+        "id": null,
+        "name": "تعليم التداول",
+        "description": "دروس تعليمية شاملة حول تداول الفوركس والأسواق المالية",
+        "videoTypes": ["educational"]
+      },
+      {
+        "id": null,
+        "name": "نصائح التداول",
+        "description": "نصائح واستراتيجيات التداول من خبراء Seekapa",
+        "videoTypes": ["trading_tips"]
+      },
+      {
+        "id": null,
+        "name": "تحليل السوق",
+        "description": "تحليلات فنية ومالية متعمقة للأسواق",
+        "videoTypes": ["market_analysis"]
+      }
+    ],
+    "personas": [
+      {
+        "id": null,
+        "name": "فاطمة الراشد",
+        "playlistName": "فاطمة الراشد - كل الفيديوهات",
+        "description": "جميع الفيديوهات من المحللة فاطمة الراشد"
+      },
+      {
+        "id": null,
+        "name": "أحمد المنصوري",
+        "playlistName": "أحمد المنصوري - كل الفيديوهات",
+        "description": "جميع الفيديوهات من المحلل أحمد المنصوري"
+      }
+    ]
+  },
+  "metadata": {
+    "titleFormat": "{topic} | {persona} | Seekapa - {date}",
+    "titleMaxLength": 100,
+    "descriptionMaxLength": 5000,
+    "tagsMaxCount": 50,
+    "tagsMaxLength": 500,
+    "defaultTags": [
+      "Seekapa",
+      "سيكابا",
+      "فوركس",
+      "تداول",
+      "تداول العملات",
+      "forex",
+      "forex trading",
+      "currency trading"
+    ],
+    "riskDisclaimer": "⚠️ تنويه المخاطر:\nتداول الفوركس والعقود مقابل الفروقات يحمل مخاطر عالية وقد لا يكون مناسباً لجميع المستثمرين.\nقد تخسر بعض أو كل رأس مالك المستثمر.\nهذا المحتوى لأغراض تعليمية فقط وليس نصيحة استثمارية.\nاستشر مستشاراً مالياً مستقلاً قبل اتخاذ أي قرار استثماري.",
+    "callToAction": "🔗 ابدأ التداول مع Seekapa:\nhttps://seekapa.com",
+    "socialMedia": {
+      "instagram": "https://instagram.com/seekapa",
+      "twitter": "https://twitter.com/seekapa",
+      "linkedin": "https://linkedin.com/company/seekapa"
+    }
+  },
+  "categories": {
+    "people_blogs": "22",
+    "education": "27",
+    "howto_style": "26",
+    "news_politics": "25"
+  },
+  "scheduling": {
+    "enabled": false,
+    "defaultPublishTime": "09:00",
+    "timezone": "Asia/Dubai"
+  },
+  "analytics": {
+    "trackUploads": true,
+    "logPath": "./logs/youtube-uploads.json"
+  },
+  "api": {
+    "quotaLimit": 10000,
+    "quotaWarningThreshold": 8000,
+    "uploadCostPerVideo": 1600,
+    "retryAttempts": 3,
+    "retryDelay": 5000
+  }
+}

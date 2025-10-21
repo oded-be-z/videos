@@ -1,0 +1,30 @@
+{
+  "name": "videos-youtube-agent",
+  "version": "1.0.0",
+  "description": "YouTube Data API v3 integration for automated Seekapa video uploads with OAuth2, metadata generation, and SEO optimization",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node tests/test-youtube.js",
+    "auth": "node src/services/oauth.js",
+    "setup": "node -e \"require('./src/index').setupPlaylists()\"",
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "youtube",
+    "youtube-api",
+    "video-upload",
+    "automation",
+    "oauth2",
+    "seekapa",
+    "forex"
+  ],
+  "author": "Seekapa",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.3",
+    "ffmpeg-static": "^5.2.0",
+    "googleapis": "^164.1.0",
+    "moment": "^2.30.1"
+  }
+}
