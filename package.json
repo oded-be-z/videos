@@ -1,0 +1,25 @@
+{
+  "name": "videos-script-agent",
+  "version": "1.0.0",
+  "description": "Arabic (GCC dialect) script generator for 1-minute trading videos",
+  "main": "src/agents/script-writer.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/agents/script-writer.js",
+    "test": "node tests/test-script-generation.js"
+  },
+  "keywords": [
+    "arabic",
+    "gcc",
+    "khaleeji",
+    "trading",
+    "video-scripts",
+    "azure-openai"
+  ],
+  "author": "Seekapa/Axia",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/openai": "^2.0.0",
+    "dotenv": "^16.4.5"
+  }
+}

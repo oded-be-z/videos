@@ -1,0 +1,42 @@
+{
+  "risk_warnings": {
+    "short": {
+      "ar": "التداول يحمل مخاطر. قد تخسر رأس مالك.",
+      "en": "Trading carries risks. You may lose your capital."
+    },
+    "medium": {
+      "ar": "تذكر، التداول في الأسواق المالية ينطوي على مخاطر عالية. يجب ألا تستثمر أموالاً لا يمكنك تحمل خسارتها.",
+      "en": "Remember, trading in financial markets involves high risks. You should not invest money you cannot afford to lose."
+    },
+    "long": {
+      "ar": "التداول في الأسواق المالية، بما في ذلك العملات الأجنبية والعقود مقابل الفروقات، ينطوي على مخاطر كبيرة وقد لا يكون مناسباً لجميع المستثمرين. قد تخسر كامل رأس المال المستثمر. تأكد من فهم المخاطر قبل البدء.",
+      "en": "Trading in financial markets, including forex and CFDs, carries significant risks and may not be suitable for all investors. You may lose your entire invested capital. Ensure you understand the risks before starting."
+    }
+  },
+  "cta_disclaimers": {
+    "open_account": {
+      "ar": "افتح حساب تجريبي مجاني اليوم واستكشف الأسواق بدون مخاطر.",
+      "en": "Open a free demo account today and explore markets risk-free."
+    },
+    "learn_more": {
+      "ar": "تعلم المزيد عن استراتيجيات التداول في أكاديميتنا المجانية.",
+      "en": "Learn more about trading strategies in our free academy."
+    },
+    "visit_website": {
+      "ar": "زر موقعنا للمزيد من التحليلات والأدوات التعليمية.",
+      "en": "Visit our website for more analysis and educational tools."
+    }
+  },
+  "mandatory_phrases": {
+    "gcc_dialect": [
+      "يا شباب",
+      "أهلين",
+      "عساكم طيبين",
+      "ان شاء الله",
+      "الحين",
+      "شلون",
+      "وايد",
+      "زين"
+    ]
+  }
+}
